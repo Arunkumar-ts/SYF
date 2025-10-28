@@ -222,7 +222,8 @@ function App() {
                     <MdOutlineTimer color="white" />
                   </div>
                   <div className="text-black m-0 hero-contact">
-                    Open 6am — 12pm (Mon-Fri)
+                    Batches (6AM - 7AM) (11AM - 12PM) <br />
+                    Online only (4PM - 5PM)
                   </div>
                 </div>
               </div>
@@ -242,12 +243,24 @@ function App() {
                     }}
                   />
                 </div>
-               
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* MISSIONS & VISIONS */}
+      <section id="about">
+        <div className="container">
+            <div className="row">
+              <div className="col">
+
+              </div>
+            </div>
+        </div>
+      </section>
+
+
 
       <div className="container py-4">
         <Swiper
@@ -463,6 +476,7 @@ function App() {
 }
 
 export default App;
+
 
 
 
