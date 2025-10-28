@@ -2,13 +2,14 @@ import { FaPhone } from "react-icons/fa6";
 import { IoLocationSharp } from "react-icons/io5";
 import { MdOutlineTimer } from "react-icons/md";
 import { IoLocationOutline } from "react-icons/io5";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { CgMenuRightAlt } from "react-icons/cg";
 import { IoClose } from "react-icons/io5";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Virtual } from "swiper/modules";
+import { FaCheckCircle } from "react-icons/fa";
 import "swiper/css";
 
 function App() {
@@ -179,11 +180,11 @@ function App() {
       {/* HERO */}
       <section id="home">
         <div className="container py-md-5">
-          <div className="row align-items-center g-4 hero-text-side ">
+          <div className="row align-items-center g-4 hero-text-side py-3 px-0 px-md-3">
             <div className="col-md-6 side-flower ">
               <h1 className="hero-text">
-                A Safe <span className="hero-text-and">&</span> Supportive Yoga
-                Community for Women's
+                A Safe <span className="hero-text-and">&</span> Supportive
+                Fitness Community for Women's
                 <span className="text-black">
                   , <br />
                 </span>
@@ -230,37 +231,103 @@ function App() {
             </div>
 
             <div className="col-md-6">
-              <div>
-                <div className="rounded-3 text-end">
-                  <img
-                    src="Hero-img1.jpeg"
-                    alt="Women's practicing yoga"
-                    className="img-fluid rounded-3"
-                    style={{
-                      height: "400px",
-                      objectFit: "cover",
-                      width: "100%",
-                    }}
-                  />
-                </div>
+              <div className="rounded-3 text-end">
+                <img
+                  src="Hero-img1.jpeg"
+                  alt="Women's practicing yoga"
+                  className="img-fluid rounded-3"
+                  style={{
+                    height: "400px",
+                    objectFit: "cover",
+                    width: "100%",
+                  }}
+                />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* MISSIONS & VISIONS */}
+      {/* about */}
       <section id="about">
         <div className="container">
-            <div className="row">
-              <div className="col">
-
+          <div className="row pt-5 align-items-center g-4">
+            <div className="col-md-6">
+              <h2 className="about-title1 mb-3">What You Get with Sharva</h2>
+              <span className="about-title">WELCOME TO SHARVA</span>
+              <div>
+                <p className="about-para mt-4">
+                  At <b className="about-para-b">Sharva Yoga</b> and{" "}
+                  <b className="about-para-b">Fitness</b>, we go beyond regular
+                  workouts, we help you build a balanced, healthy, and mindful
+                  lifestyle.
+                </p>
+                <p className="about-para">
+                  Our programs blend{" "}
+                  <b className="about-para-b">traditional yoga</b> practices
+                  with
+                  <b className="about-para-b">modern fitness techniques</b>,
+                  designed to strengthen your body, calm your mind, and energize
+                  your spirit.
+                </p>
+                <div className="ms-0 ms-md-5">
+                  <ul class="list-unstyled">
+                    <li className="about-hand">
+                      <FaCheckCircle
+                        className="me-3 "
+                        style={{ color: "#ca28c2ff", fontSize: "24px" }}
+                      />
+                      Personalized yoga and fitness sessions for all levels
+                    </li>
+                    <li className="about-hand">
+                      <FaCheckCircle
+                        className="me-3"
+                        style={{ color: "#ca28c2ff", fontSize: "24px" }}
+                      />
+                      Certified trainers and holistic wellness support
+                    </li>
+                    <li className="about-hand">
+                      <FaCheckCircle
+                        className="me-3"
+                        style={{ color: "#ca28c2ff", fontSize: "24px" }}
+                      />
+                      Meditation, breathwork, and stress-relief techniques
+                    </li>
+                    <li className="about-hand">
+                      <FaCheckCircle
+                        className="me-3"
+                        style={{ color: "#ca28c2ff", fontSize: "24px" }}
+                      />
+                      Posture correction and flexibility improvement
+                    </li>
+                    <li className="about-hand">
+                      <FaCheckCircle
+                        className="me-3"
+                        style={{ color: "#ca28c2ff", fontSize: "24px" }}
+                      />
+                      Nutrition tips and continuous progress tracking
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
+            <div className="col-md-6">
+              <div className="rounded-3 text-end">
+                <img
+                  src="tHero-img5.jpeg"
+                  alt="Women's practicing yoga"
+                  className="img-fluid rounded-3"
+                  // style={{
+                  //   height: "400px",
+                  //   objectFit: "cover",
+                  //   width: "100%",
+                  // }}
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
-
-
 
       <div className="container py-4">
         <Swiper
@@ -476,59 +543,6 @@ function App() {
 }
 
 export default App;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
