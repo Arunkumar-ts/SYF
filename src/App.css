@@ -1,13 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Titillium+Web:wght@400;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Slab:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
-
-/* HEADER */
-.header {
-    position: sticky;
-    top: 0px;
-    z-index: 1000;
-    background-color: white;
+html {
+    scroll-behavior: smooth;
+}
+body {
+    background: linear-gradient(135deg, #e5d8f3, #f5d5e7);
 }
 
 .nav-list {
@@ -25,12 +20,11 @@
 .nav-link-custom {
     color: #333;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-weight: 500;
     transition: all 0.3s ease;
     position: relative;
-    /* font-family: 'Playfair Display', serif; */
-    font-family: 'Roboto Slab', serif;
-    font-weight: 450;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 700;
 }
 
 .nav-link-custom::after {
@@ -57,12 +51,14 @@
 }
 
 .book-free-btn {
-    background: linear-gradient(90deg, #e75480b4, #892be2b0);
+    background: linear-gradient(90deg, #E75480, #8A2BE2);
     border: none;
-    border-radius: 20px;
+    border-radius: 10px;
     color: #fff;
     transition: all 0.3s ease;
     text-decoration: none;
+    font-family: 'Bricolage Grotesque', sans-serif;
+
 }
 
 .book-free-btn:hover {
@@ -72,7 +68,7 @@
 }
 
 .menu {
-    background: linear-gradient(90deg, #8A2BE2, #E75480);
+    background: linear-gradient(90deg, #E75480, #8A2BE2);
     padding: 5px;
     border: none;
     border-radius: 4px;
@@ -80,111 +76,163 @@
 
 .menu-icon {
     font-size: 1.5rem;
-    color: white;
+    color: #fff;
 }
 
 .offcanvas {
     transition: transform 0.3s ease-in-out;
 }
 
-/* HERO */
-#home {
-    background-image: url('/HeroBG.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.hero-text {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    color: #460b7e;
-    font-size: 2.5rem;
-    text-shadow: 0 0 50px rgb(255, 255, 255);
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
 }
 
-.hero-test2 {
-    font-size: 1.5rem;
-}
-
-.hero1-text {
-    font-style: italic;
-    font-size: 1rem;
-    color: black;
-    font-weight: 400;
-}
-
-.hero-text-and {
-    background: linear-gradient(90deg, #E75480, #8A2BE2);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 3.5rem;
-}
-
-.hero-btn {
-    background: linear-gradient(90deg, #8A2BE2, #E75480);
-    color: #fff;
-    border-radius: 10px;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    font-size: 1rem;
+/* Accordion custom styling */
+.accordion-button {
     font-weight: 600;
-    padding: .5rem 1.5rem .5rem 1.5rem;
+    padding: 1rem 1.25rem;
 }
 
-.hero-btn-active {
-    background: white;
-    color: black;
+.accordion-button:not(.collapsed) {
+    background-color: #F3E8FF;
+    color: #8A2BE2;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: rgba(138, 43, 226, 0.25);
+}
+
+.accordion-body {
+    padding: 1rem 1.25rem;
+    background-color: #F9FAFB;
+}
+
+/* Form control styling */
+.form-control:focus {
+    border-color: #8A2BE2;
+    box-shadow: 0 0 0 0.2rem rgba(138, 43, 226, 0.25);
+}
+
+/* Button hover effects */
+.btn-link:hover {
+    color: white !important;
+}
+
+/* Service card gradient backgrounds */
+.card-body {
+    position: relative;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-text {
+        font-size: 2rem !important;
+    }
+
+    .hero-test2 {
+        font-size: 1.25rem !important;
+    }
+
+    .display-5 {
+        font-size: 2rem !important;
+    }
+}
+
+/* Offcanvas custom styling */
+.offcanvas {
+    background: linear-gradient(to bottom, #ffffff, #fefefe);
+}
+
+.offcanvas-header {
+    background: linear-gradient(135deg, #F3E8FF, #FCE7F3);
+}
+
+.header {
+    background: linear-gradient(135deg, #F3E8FF, #FCE7F3);
+    position: sticky;
+    top: 0px;
+    z-index: 1000;
+}
+
+/* Badge styling */
+.badge {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
     font-weight: 500;
-    border: 1px solid gray;
 }
 
-.hero-text-side {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 1rem;
-    color: #fff;
+.floating-contact {
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 9999;
 }
 
-.hero-icon {
-    background: linear-gradient(40deg, #E75480, #8A2BE2);
-    color: #fff;
+/* Button style */
+.contact-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    border: none;
 }
 
-.hero-contact {
-    font-family: "Roboto Slab", serif;
-    font-size: 0.8rem;
+/* Hover animation */
+.contact-btn:hover {
+    transform: scale(1.1);
 }
 
-/* ABOUT */
-.about-title {
-    font-size: 1.3rem;
-    background: linear-gradient(40deg, #E75480, #8A2BE2);
+/* Pulse animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.whatsapp {
+    animation: pulse 2s infinite;
+    background: #25d366;
     color: white;
-    padding: 10px 5px;
-    font-weight: 700;
 }
 
-.about-title1 {
-    color: gray;
-    font-weight: 700;
-    font-size: 2.5rem;
+.phone {
+    animation: pulse 2s infinite 1s;
+    background:#007bff;
+    /* background: linear-gradient(135deg, #c39cec, #fabcdf); */
+    color: white;
 }
 
-.about-para {
-    font-family: "Roboto Slab", serif;
-    font-weight: 350;
+.up {
+    background-color: rgb(97, 96, 96);
+    color: white;
 }
 
-.about-para-b {
-    font-weight: 500;
+.copyright-footer {
+    background: linear-gradient(135deg, #e5d8f3, #f5d5e7);
 }
 
-.about-hand {
-    font-weight: 40 0;
-    font-size: .9rem;
-    padding: 10px 0px 5px 0px;
-    font-family: "Roboto Slab", serif;
+.footer {
+    background: rgb(97, 96, 96);
 }
