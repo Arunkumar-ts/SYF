@@ -11,7 +11,7 @@ const ContactForm = () => {
       .required("Phone number is required"),
     comment: Yup.string()
       .min(5, "Please tell us a bit more")
-      .required("Please give what do you need"),
+      .required("Please give your message"),
   });
 
   const initialValues = {
@@ -21,8 +21,11 @@ const ContactForm = () => {
   };
 
   const handleSubmit = (values, { resetForm }) => {
-    console.log("Form Submitted:", values);
-    alert(`Form submitted successfully!\n\n${JSON.stringify(values, null, 2)}`);
+    const message = `Hello, my name is ${values.name}. My phone number is ${values.phone}. Message: ${values.comment}`;
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappURL = `https://wa.me/6381500790?text=${encodedMessage}`;
+
+    window.open(whatsappURL, "_blank");
     resetForm();
   };
 
@@ -82,7 +85,7 @@ const ContactForm = () => {
 
               <div className="mb-3 text-start">
                 <label htmlFor="comment" className="form-label fw-semibold">
-                  Tell About Yourself
+                  Message
                 </label>
                 <Field
                   as="textarea"

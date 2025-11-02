@@ -19,11 +19,6 @@ function App() {
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
 
-  const scrollToSection = (id) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-    setShow(false);
-  };
-
   const videoSources = [
     "/v1.mp4",
     "/v2.mp4",
@@ -75,7 +70,7 @@ function App() {
                 </a>
               </li>
               <li>
-                <a href="#tis" className="nav-link-custom">
+                <a href="#tips" className="nav-link-custom">
                   Tips
                 </a>
               </li>
@@ -87,7 +82,7 @@ function App() {
             </ul>
 
             <a
-              href="#enroll"
+              href="#contact"
               className="btn book-free-btn fw-semibold px-4 py-2"
             >
               Book Free Session
@@ -170,7 +165,11 @@ function App() {
                         </a>
                       </li>
                       <li>
-                        <a href="#tips" className="nav-link-custom">
+                        <a
+                          href="#tips"
+                          className="nav-link-custom"
+                          onClick={handleClose}
+                        >
                           Tips
                         </a>
                       </li>
@@ -185,7 +184,7 @@ function App() {
                       </li>
                       <li>
                         <a
-                          href="#enroll"
+                          href="#contact"
                           onClick={handleClose}
                           className="btn book-free-btn fw-semibold px-4 py-2"
                         >
@@ -201,82 +200,71 @@ function App() {
         </nav>
       </header>
 
-      {/* Hero Section */}
-      <section
-        id="home"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(138, 43, 226, 0.1), rgba(231, 84, 128, 0.1)), url(https://images.unsplash.com/photo-1545389336-cf090694435e?w=1600&q=80)",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-        }}
-      >
-        <div className="container py-5">
-          <div className="row align-items-center g-4 hero-text-side py-3 px-3">
-            <div className="col-md-6">
-              <h1 className="hero-text-main">
-                A Safe <span className="hero-text-and">&</span> Supportive
+      {/* Hero */}
+      <section id="home" className="hero-section">
+        <div className="container py-3">
+          <div className="row align-items-center g-4 py-4 px-3">
+            <div className="col-md-6 text-white">
+              <h1 className="display-5 fw-bold mb-4" style={{ color: "#333" }}>
+                A Safe <span style={{ color: "#E75480" }}>&</span> Supportive{" "}
+                <br />
                 Fitness Community for Women
               </h1>
-              <h3 className="hero-subtitle">
+              <h4 className="fw-bold text-dark">
                 Transform your body and mind through yoga
-              </h3>
-              <p className="mt-3 hero-description">
-                Discover strength, balance, and inner peace. Our specialized
-                yoga programs empower women to connect with their true
-                potential.
+              </h4>
+              <p className="text-dark">
+                Discover <b>strength</b>, <b>balance</b>, and <b>inner peace</b>
+                . Our yoga programs are designed to empower women and help them
+                connect deeply with their true potential physically and
+                mentally.
               </p>
 
-              <div className="mt-4 d-flex flex-wrap gap-3">
-                <button
-                  onClick={() => scrollToSection("services")}
-                  className="hero-btn"
-                >
-                  Join Now
-                </button>
-                <button
-                  onClick={() => scrollToSection("contact")}
-                  className="hero-btn hero-btn-active"
-                >
-                  Contact Us
-                </button>
+              <div className="hero-buttons">
+                <a href="#contact">
+                  <button className="hero-btn px-4 py-2 rounded-pill fw-semibold border-0 join-btn">
+                    Join Now
+                  </button>
+                </a>
+                <a href="#contact">
+                  <button className="hero-btn px-4 py-2 rounded-pill fw-semibold border border-light bg-white text-dark">
+                    Contact Us
+                  </button>
+                </a>
               </div>
 
-              <div className="mt-4 row g-2 d-flex align-items-center bg-white justify-content-center rounded-3 px-2 py-3">
-                <div className="col-12 d-flex align-items-start gap-2">
-                  <div className="fs-4 d-flex align-items-center justify-content-center rounded-circle hero-icon p-2">
+              {/* Contact Info */}
+              <div className="hero-contact-card mt-3">
+                <div className="hero-contact-item">
+                  <div className="hero-icon purple rounded-circle p-2">
                     <MapPin className="text-white" size={20} />
                   </div>
-                  <address className="text-black m-0 hero-contact">
-                    Karthik illam 231 G, 2nd floor, Kamarajar salai near
+                  <address className="text-dark m-0 hero-LT">
+                    <b>Sharva Studio:</b> <br />
+                    Karthik illam, 231 G, 2nd floor, Kamarajar Salai, near
                     Manimaran Bakery, Madurai
                   </address>
                 </div>
 
-                <div className="col-12 d-flex align-items-center gap-2">
-                  <div className="fs-4 d-flex align-items-center justify-content-center rounded-circle hero-icon p-2">
+                <div className="hero-contact-item">
+                  <div className="hero-icon pink rounded-circle p-2">
                     <Clock className="text-white" size={20} />
                   </div>
-                  <div className="text-black m-0 hero-contact">
-                    <p className="m-0">Batches (6AM - 7AM) (11AM - 12PM)</p>
-                    <p className="m-0">Online only (4PM - 5PM)</p>
+                  <div className="text-dark hero-LT">
+                    <b>Batches:</b>
+                    <p className="m-0">6AM - 7AM • 11AM - 12PM</p>
+                    <p className="m-0">Online only: 4PM - 5PM</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="col-md-6">
-              <div className="rounded-3">
+            <div className="col-md-6 text-center">
+              <div className="hero-image-wrapper">
                 <img
-                  src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80"
+                  src="/Hero-img1.jpeg"
                   alt="Women practicing yoga"
-                  className="img-fluid rounded-3 shadow-lg"
-                  style={{
-                    height: "400px",
-                    objectFit: "cover",
-                    width: "100%",
-                  }}
+                  className="hero-image"
                 />
               </div>
             </div>
@@ -284,77 +272,61 @@ function App() {
         </div>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="py-5">
+      {/* About */}
+      <section id="about" className=" about-section">
         <div className="container">
-          <div className="row align-items-center g-4">
-            <div className="col-md-6">
-              <h2 className="section-title-main mb-3">
-                What You Get with Saara
-              </h2>
-              <span className="about-title">WELCOME TO SAARA</span>
-              <div>
-                <p className="about-para mt-4">
-                  At <b className="about-para-b">Saara Yoga</b> and{" "}
-                  <b className="about-para-b">Fitness</b>, we go beyond regular
-                  workouts, we help you build a balanced, healthy, and mindful
-                  lifestyle.
+          <div className="row align-items-center g-2">
+            <div className="col-lg-6 py-5 px-4">
+              <div className="mb-4">
+                <h2 className="fw-bold display-6 text-dark mb-3">
+                  What You Get with{" "}
+                  <span style={{ color: "#E75480" }}>Sharva</span>
+                </h2>
+                <p className="text-uppercase about-welcome p-2">
+                  Welcome to Sharva Yoga & Fitness
                 </p>
-                <p className="about-para">
-                  Our programs blend{" "}
-                  <b className="about-para-b">traditional yoga</b> practices
-                  with <b className="about-para-b">modern fitness techniques</b>
-                  , designed to strengthen your body, calm your mind, and
-                  energize your spirit.
-                </p>
-                <div className="ms-0 ms-md-4">
-                  <ul className="list-unstyled">
-                    <li className="about-hand">
-                      <FaCheckCircle
-                        className="me-3"
-                        style={{ color: "#ca28c2ff", fontSize: "24px" }}
-                      />
-                      Personalized yoga and fitness sessions for all levels
-                    </li>
-                    <li className="about-hand">
-                      <FaCheckCircle
-                        className="me-3"
-                        style={{ color: "#ca28c2ff", fontSize: "24px" }}
-                      />
-                      Certified trainers and holistic wellness support
-                    </li>
-                    <li className="about-hand">
-                      <FaCheckCircle
-                        className="me-3"
-                        style={{ color: "#ca28c2ff", fontSize: "24px" }}
-                      />
-                      Meditation, breathwork, and stress-relief techniques
-                    </li>
-                    <li className="about-hand">
-                      <FaCheckCircle
-                        className="me-3"
-                        style={{ color: "#ca28c2ff", fontSize: "24px" }}
-                      />
-                      Posture correction and flexibility improvement
-                    </li>
-                    <li className="about-hand">
-                      <FaCheckCircle
-                        className="me-3"
-                        style={{ color: "#ca28c2ff", fontSize: "24px" }}
-                      />
-                      Nutrition tips and continuous progress tracking
-                    </li>
-                  </ul>
-                </div>
               </div>
+
+              <p className="text-muted ">
+                At Sharva Yoga and Fitness, we go beyond regular workouts we
+                guide you to build a balanced, healthy, and mindful lifestyle.
+              </p>
+
+              <p className="text-muted ">
+                Our programs combine traditional yoga with modern fitness
+                techniques to strengthen your body, calm your mind, and energize
+                your spirit.
+              </p>
+
+              <ul className="list-unstyled mt-4">
+                {[
+                  "Personalized yoga and fitness sessions for all levels",
+                  "Certified trainers and holistic wellness support",
+                  "Meditation, breathwork, and stress-relief techniques",
+                  "Posture correction and flexibility improvement",
+                  "Nutrition tips and continuous progress tracking",
+                ].map((item, i) => (
+                  <li
+                    key={i}
+                    className="d-flex align-items-start mb-3 about-point"
+                  >
+                    <FaCheckCircle
+                      className="me-3 mt-1"
+                      style={{ color: "#8A2BE2", fontSize: "22px" }}
+                    />
+                    <span className="fw-semibold text-dark">{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            <div className="col-md-6">
-              <div className="rounded-3">
+            <div className="col-lg-6 text-center">
+              <div className="about-img-wrapper position-relative">
+                <div className="about-glow"></div>
                 <img
-                  src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=800&q=80"
+                  src="/aboutImg.jpg"
                   alt="Yoga practice"
-                  className="img-fluid rounded-3 shadow-lg"
+                  className="img-fluid rounded-4 shadow-lg about-img"
                 />
               </div>
             </div>
@@ -362,14 +334,21 @@ function App() {
         </div>
       </section>
 
-      {/* Services 1 */}
-      <section className="container mt-5">
+      {/* Follow On Insta */}
+      <section className="container-fluid my-5 py-3">
+        <div className="d-flex justify-content-center mb-4 ">
+          <a href="https://www.instagram.com/sharva_yoga_and_fitness?utm_source=qr&igsh=MXEwa3F0aGcxNXljZQ%3D%3D">
+            <button className="py-2  px-4 rounded border-0 book-free-btn">
+              Follow us on Instagram
+            </button>
+          </a>
+        </div>
         <Swiper
-          modules={[Autoplay]}
-          spaceBetween={10}
+          modules={[Virtual, Autoplay]}
+          spaceBetween={20}
           slidesPerView={2}
           loop={true}
-          speed={1000}
+          speed={1500}
           autoplay={{
             delay: 0,
             disableOnInteraction: false,
@@ -402,131 +381,113 @@ function App() {
         </Swiper>
       </section>
 
-      {/* Services 2 */}
+      {/* Services */}
       <section id="services" className="py-5">
         <div className="container">
-          <h2 className="text-center mb-2 section-title">
-            Our Specialized Programs
-          </h2>
-          <p className="text-center section-subtitle mb-5 mx-auto">
-            Professional wellness programs tailored to transform your body,
-            mind, and lifestyle
-          </p>
-          <div className="row g-4">
-            {[
-              {
-                title: "Zumba Fitness",
-                subtitle: "Creating a Fun and Effective Workout",
-                desc: "High-energy dance fitness classes that combine Latin rhythms with easy-to-follow moves for a full-body cardio workout.",
-                icon: "💃",
-                gradient: "linear-gradient(135deg, #E75480, #D63959)",
-                img: "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&q=80",
-              },
-              {
-                title: "Weight Loss Program",
-                subtitle: "Transform Your Body With Our Weight Loss Program",
-                desc: "Comprehensive approach combining structured workouts, nutrition planning, and lifestyle coaching for sustainable results.",
-                icon: "⚖️",
-                gradient: "linear-gradient(135deg, #8A2BE2, #6A0DAD)",
-                img: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=80",
-              },
-              {
-                title: "Pre-Bridal Weight Loss",
-                subtitle:
-                  "Wedding Day With Our Targeted Pre-bridal Weight Loss",
-                desc: "Specialized program to help you look and feel your absolute best on your special day with personalized fitness plans.",
-                icon: "👰",
-                gradient: "linear-gradient(135deg, #FF69B4, #E75480)",
-                img: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=600&q=80",
-              },
-              {
-                title: "Herbalife Nutrition",
-                subtitle:
-                  "Designed to Support Weight Management & Overall Health",
-                desc: "Science-backed nutrition solutions with meal replacement shakes, supplements, and personalized dietary guidance.",
-                icon: "🌿",
-                gradient: "linear-gradient(135deg, #10B981, #059669)",
-                img: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&q=80",
-              },
-              {
-                title: "Yoga Classes",
-                subtitle: "Discover Inner Peace and Strength through Yoga",
-                desc: "Traditional and modern yoga styles including Hatha, Vinyasa, and Power Yoga for all experience levels.",
-                icon: "🧘‍♀️",
-                gradient: "linear-gradient(135deg, #9333EA, #7C3AED)",
-                img: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80",
-              },
-              {
-                title: "Pregnancy Weight Loss",
-                subtitle:
-                  "Recover Your Pre-baby Body Healthily and Confidently",
-                desc: "Safe postpartum fitness program designed to help new mothers regain strength and confidence after childbirth.",
-                icon: "🤱",
-                gradient: "linear-gradient(135deg, #3B82F6, #2563EB)",
-                img: "https://images.unsplash.com/photo-1555817129-e58f9e4a2c8f?w=600&q=80",
-              },
-              {
-                title: "Anti-Aging Program",
-                subtitle: "Your Path to Timeless Beauty and Well-being",
-                desc: "Holistic wellness approach combining fitness, nutrition, and lifestyle modifications to promote youthful vitality.",
-                icon: "✨",
-                gradient: "linear-gradient(135deg, #F59E0B, #D97706)",
-                img: "https://images.unsplash.com/photo-1552196563-55cd4e45efb3?w=600&q=80",
-              },
-              {
-                title: "CrossFit Training",
-                subtitle: "Shape Your Body, Sculpt Your Confidence",
-                desc: "High-intensity functional fitness program that builds strength, endurance, and athletic performance.",
-                icon: "🏋️‍♀️",
-                gradient: "linear-gradient(135deg, #EF4444, #DC2626)",
-                img: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&q=80",
-              },
-              {
-                title: "Dyno Kids",
-                subtitle:
-                  "Where Children Have Fun and Parents Can Feel Confident",
-                desc: "Age-appropriate fitness and movement programs that develop coordination, strength, and healthy habits in children.",
-                icon: "👶",
-                gradient: "linear-gradient(135deg, #FBBF24, #F59E0B)",
-                img: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&q=80",
-              },
-            ].map((service, idx) => (
-              <div key={idx} className="col-md-6 col-lg-4">
-                <div
-                  className="card service-card border-0 shadow-sm h-100"
-                  style={{ overflow: "hidden" }}
-                >
-                  <div className="service-image-wrapper">
+          <div className="text-center mb-5">
+            <h1 className="display-5 fw-bold mb-2" style={{ color: "#333" }}>
+              <span style={{ color: "#E75480" }}>Our</span> Specialized Services
+            </h1>
+            <p className="text-muted">
+              Empowering women through fitness, yoga, and holistic healthcare
+            </p>
+          </div>
+
+          <div className="mb-5">
+            <div className="row g-4">
+              {[
+                {
+                  title: "Yoga Classes",
+                  subtitle: "Find Inner Balance & Strength",
+                  desc: "Blend of Hatha, Vinyasa, and Power Yoga to enhance flexibility, mindfulness, and inner peace.",
+                  img: "service8.jpeg",
+                },
+                {
+                  title: "Strength Training",
+                  subtitle: "Tone & Build Lean Muscle",
+                  desc: "Customized strength programs that sculpt your body while improving endurance and posture.",
+                  img: "service7.webp",
+                },
+                {
+                  title: "Zumba & Cardio",
+                  subtitle: "Dance Your Way to Fitness",
+                  desc: "Fun, energetic, calorie-burning workouts with music and rhythm to keep your heart healthy.",
+                  img: "service1.jpg",
+                },
+                {
+                  title: "Music & Fun Workouts",
+                  subtitle: "Move, Groove & Glow",
+                  desc: "Dynamic group sessions designed to make fitness enjoyable and social for women of all ages.",
+                  img: "service4.jpg",
+                },
+                {
+                  title: "Healthy Diet Plan",
+                  subtitle: "Eat Smart, Stay Fit",
+                  desc: "Personalized nutrition guidance and meal plans aligned with your fitness and wellness goals.",
+                  img: "service5.jpg",
+                },
+                {
+                  title: "PCOD & PCOS Care",
+                  subtitle: "Balance Your Hormones Naturally",
+                  desc: "Customized workout and nutrition plans to manage hormonal imbalance effectively.",
+                  img: "service6.jpeg",
+                },
+                {
+                  title: "Weight Loss Program",
+                  subtitle: "Transform Your Body with Confidence",
+                  desc: "Structured fitness and diet program for sustainable and healthy weight management.",
+                  img: "service1.jpg",
+                },
+                {
+                  title: "Postpartum Workout",
+                  subtitle: "Regain Strength After Pregnancy",
+                  desc: "Safe postpartum recovery workouts designed to rebuild strength and flexibility.",
+                  img: "service6.jpeg",
+                },
+                {
+                  title: "Irregular Periods Wellness",
+                  subtitle: "Regain Rhythm & Balance",
+                  desc: "Gentle yoga, breathing, and lifestyle corrections for menstrual cycle regularity.",
+                  img: "service5.jpg",
+                },
+              ].map((service, idx) => (
+                <div key={idx} className="col-md-6 col-lg-4">
+                  <div className="card service-card h-100 border-0 shadow-sm">
                     <img
                       src={service.img}
                       alt={service.title}
-                      className="card-img-top service-image"
-                      style={{ height: "200px", objectFit: "cover" }}
+                      className="card-img-top rounded-top-4"
+                      style={{ height: "220px", objectFit: "cover" }}
                     />
                     <div
-                      className="service-overlay"
-                      style={{ background: service.gradient }}
+                      className="card-body p-4 rounded-bottom-4"
+                      style={{ borderBottom: "4px solid #E75480" }}
                     >
-                      <div className="fs-1">{service.icon}</div>
+                      <h5 className="fw-bold" style={{ color: "#E75480" }}>
+                        {service.title}
+                      </h5>
+                      <h6 className="text-muted mb-2">{service.subtitle}</h6>
+                      <p className="text-dark">{service.desc}</p>
                     </div>
                   </div>
-                  <div className="card-body">
-                    <h3 className="service-title">{service.title}</h3>
-                    <p className="service-subtitle">{service.subtitle}</p>
-                    <p className="service-description">{service.desc}</p>
-                    <button className="btn btn-link service-link p-0 fw-semibold">
-                      Learn More →
-                    </button>
-                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Transformations 1*/}
-      <section id="transformations" className="container py-4">
+      {/* Transformations */}
+      <section id="transformations" className=" py-4">
+        <div className="text-center mb-4 container">
+          <h2 className="fw-bold display-6" style={{ color: "#333" }}>
+            <span style={{ color: "#E75480" }}>Real</span> Transformations ✨
+          </h2>
+          <p className="text-muted mb-0">
+            Inspiring fitness journeys of women who changed their lives with{" "}
+            <b>Sharva Yoga</b>
+          </p>
+        </div>
         <Swiper
           modules={[Virtual, Autoplay]}
           spaceBetween={10}
@@ -538,195 +499,38 @@ function App() {
             disableOnInteraction: false,
           }}
           breakpoints={{
-            768: { slidesPerView: 2 },
-            992: { slidesPerView: 3 },
-            1200: { slidesPerView: 3 },
+            768: { slidesPerView: 3 },
+            992: { slidesPerView: 4 },
+            1200: { slidesPerView: 5 },
           }}
         >
-          <SwiperSlide key="slide-1">
-            <div className="d-grid gap-3">
-              <img
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg"
-                className="img-fluid rounded-3"
-                alt=""
-              />
-              <img
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg"
-                className="img-fluid rounded-3"
-                alt=""
-              />
-              <img
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg"
-                className="img-fluid rounded-3"
-                alt=""
-              />
-            </div>
-          </SwiperSlide>
-
-          <SwiperSlide key="slide-2">
-            <div className="d-grid gap-3">
-              <img
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg"
-                className="img-fluid rounded-3"
-                alt=""
-              />
-              <img
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg"
-                className="img-fluid rounded-3"
-                alt=""
-              />
-              <img
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg"
-                className="img-fluid rounded-3"
-                alt=""
-              />
-            </div>
-          </SwiperSlide>
-
-          <SwiperSlide key="slide-3">
-            <div className="d-grid gap-3">
-              <img
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg"
-                className="img-fluid rounded-3"
-                alt=""
-              />
-              <img
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg"
-                className="img-fluid rounded-3"
-                alt=""
-              />
-              <img
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg"
-                className="img-fluid rounded-3"
-                alt=""
-              />
-            </div>
-          </SwiperSlide>
-
-          <SwiperSlide key="slide-4">
-            <div className="d-grid gap-3">
-              <img
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg"
-                className="img-fluid rounded-3"
-                alt=""
-              />
-              <img
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg"
-                className="img-fluid rounded-3"
-                alt=""
-              />
-              <img
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg"
-                className="img-fluid rounded-3"
-                alt=""
-              />
-            </div>
-          </SwiperSlide>
-        </Swiper>
-      </section>
-
-      {/* Transformations 2*/}
-      <section className="py-5">
-        <div className="container">
-          <h2 className="text-center mb-2 section-title">Transformations</h2>
-          <p className="text-center section-subtitle mb-5 mx-auto">
-            Real results from real women in our community
-          </p>
-
-          <div className="row g-4">
-            {[
-              {
-                name: "Priya S.",
-                result: "Lost 15kg in 4 months",
-                story:
-                  "Through consistent yoga and personal training sessions, Priya achieved her dream body and gained incredible confidence.",
-                duration: "4 months",
-                program: "Weight Loss + Yoga",
-                img: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80",
-              },
-              {
-                name: "Meera R.",
-                result: "Pre-Bridal Transformation",
-                story:
-                  "Lost 12kg and toned her entire body for her wedding day. She looked absolutely stunning and felt amazing.",
-                duration: "3 months",
-                program: "Pre-Bridal Program",
-                img: "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&q=80",
-              },
-              {
-                name: "Anita K.",
-                result: "Improved flexibility by 80%",
-                story:
-                  "From barely touching her toes to mastering advanced yoga poses. Regular Hatha yoga practice transformed her mobility.",
-                duration: "6 months",
-                program: "Yoga Classes",
-                img: "https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=600&q=80",
-              },
-              {
-                name: "Divya M.",
-                result: "Postpartum Recovery Success",
-                story:
-                  "Safely regained her pre-pregnancy body and energy levels with our specialized postpartum program.",
-                duration: "5 months",
-                program: "Pregnancy Weight Loss",
-                img: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&q=80",
-              },
-              {
-                name: "Lakshmi V.",
-                result: "Gained muscle & strength",
-                story:
-                  "Built lean muscle and increased strength through our CrossFit and Power Yoga combination program.",
-                duration: "4 months",
-                program: "CrossFit + Yoga",
-                img: "https://images.unsplash.com/photo-1518310952931-b1de897abd40?w=600&q=80",
-              },
-              {
-                name: "Kavitha P.",
-                result: "Complete lifestyle change",
-                story:
-                  "Lost 20kg and reversed pre-diabetic condition through our comprehensive weight loss and nutrition program.",
-                duration: "8 months",
-                program: "Weight Loss + Nutrition",
-                img: "https://images.unsplash.com/photo-1540206395-68808572332f?w=600&q=80",
-              },
-            ].map((transform, idx) => (
-              <div key={idx} className="col-md-6 col-lg-4">
-                <div className="card transformation-card border-0 shadow-sm h-100">
-                  <div className="transformation-image-wrapper">
+          {[
+            ["/SR5.jpg", "/SR19.jpeg", "/SR16.jpg"],
+            ["/SR2.jpg", "/SR3.jpg", "/SR20.jpeg"],
+            ["/SR7.jpg", "/SR15.jpg", "/SR4.jpg"],
+            ["/SR10.jpg", "/SR23.jpeg", "/SR12.jpg"],
+            ["/SR18.jpeg", "/SR1.jpg", "/SR6.jpg"],
+            ["/SR21.jpeg", "/SR8.jpg", "/SR22.jpeg"],
+          ].map((group, index) => (
+            <SwiperSlide key={index}>
+              <div className="d-grid gap-3">
+                {group.map((img, i) => (
+                  <div
+                    key={i}
+                    className="transformation-img position-relative rounded-4 overflow-hidden"
+                  >
                     <img
-                      src={transform.img}
-                      alt={transform.name}
-                      className="card-img-top"
-                      style={{ height: "250px", objectFit: "cover" }}
+                      src={img}
+                      className="img-fluid w-100 h-100"
+                      alt={`Transformation ${i + 1}`}
+                      style={{ objectFit: "cover", height: "300px" }}
                     />
-                    <div className="transformation-badge">
-                      <span
-                        className="badge"
-                        style={{
-                          backgroundColor: "#8A2BE2",
-                          color: "white",
-                          fontSize: "0.85rem",
-                        }}
-                      >
-                        {transform.program}
-                      </span>
-                    </div>
                   </div>
-                  <div className="card-body">
-                    <h4 className="transformation-name">{transform.name}</h4>
-                    <p className="transformation-result">{transform.result}</p>
-                    <p className="transformation-story">{transform.story}</p>
-                    <div className="d-flex justify-content-between align-items-center">
-                      <span className="badge bg-light text-dark">
-                        ⏱️ {transform.duration}
-                      </span>
-                    </div>
-                  </div>
-                </div>
+                ))}
               </div>
-            ))}
-          </div>
-        </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </section>
 
       {/* Testimonials */}
@@ -734,7 +538,7 @@ function App() {
         <div className="container">
           <div className="text-center mb-5">
             <h1 className="display-5 fw-bold mb-2" style={{ color: "#333" }}>
-              What Our <span style={{ color: "#E75480" }}>Clients</span> Say 💖
+              What Our <span style={{ color: "#E75480" }}>Users Love</span> 💖
             </h1>
             <p className="text-muted">
               Inspiring journeys of women who found strength, balance, and
@@ -813,7 +617,7 @@ function App() {
       </section>
 
       {/* Tips & FAQ */}
-      <section id="faq" className="py-5">
+      <section id="tips" className="py-5">
         <div className="container">
           <div className="row ">
             {/* Fitness & Wellness Tips */}
@@ -823,7 +627,7 @@ function App() {
                 style={{ color: "#333" }}
               >
                 <span style={{ color: "#E75480" }}>Women's</span> <br /> Fitness
-                & Wellness Tips
+                & Wellness Tips 👇
               </h2>
 
               <div className="d-flex flex-column gap-3 mb-3">
@@ -915,7 +719,13 @@ function App() {
                 ].map((faq, idx) => (
                   <Accordion.Item eventKey={idx.toString()} key={idx}>
                     <Accordion.Header style={{ backgroundColor: "#F3E8FF" }}>
-                      <h4 className="h6 fw-bold mb-2">{faq.q}</h4>
+                      <div className=" d-flex gap-2">
+                        <h4 className="h6 fw-bold mb-2">
+                          {idx + 1}
+                          {"."}
+                        </h4>
+                        <h4 className="h6 fw-bold mb-2">{faq.q}</h4>
+                      </div>
                     </Accordion.Header>
                     <Accordion.Body className="bg-light">
                       {faq.a}
@@ -933,7 +743,7 @@ function App() {
         <div className="container pt-3 pb-5">
           <div className=" row text-center">
             <h1 className="display-4 fw-bold mb-2">
-              Get in <span style={{ color: "#E75480" }}>Touch</span>
+              Get in <span style={{ color: "#E75480" }}>Touch</span> 🤝
             </h1>
             <p>
               Have questions or need assistance? We're here to help you on your
@@ -966,57 +776,89 @@ function App() {
               <a className="logo d-flex text-decoration-none " href="#home">
                 <img
                   src="SharvaLogo.png"
-                  className="img-fluid bg-white mb-4 rounded-1 pe-2"
+                  className="img-fluid mb-4 rounded-1 pe-2"
                   alt="Sharva Yoga & Fitness Logo"
                   width={150}
                 />
               </a>
               <p className="text-white footer-font w-75">
-                Transform your life through wellness, balance, and strength.
+                Find your balance, breathe deeply, and rediscover yourself. At
+                Sharva, we create a safe and supportive space where women
+                transform their minds and bodies through yoga and mindful
+                living.
               </p>
             </div>
             <div className="col-lg-3 mb-3 mb-md-0">
               <h4 className="h5 mb-3 font-semibolds">QUICK LINKS</h4>
               <div className="d-flex flex-column gap-2">
-                <button
-                  onClick={() => scrollToSection("about")}
-                  className="btn btn-link text-white text-decoration-none p-0 text-start"
-                >
-                  Home
-                </button>
-                <button
-                  onClick={() => scrollToSection("about")}
-                  className="btn btn-link text-white text-decoration-none p-0 text-start"
-                >
-                  About Us
-                </button>
-                <button
-                  onClick={() => scrollToSection("services")}
-                  className="btn btn-link text-white text-decoration-none p-0 text-start"
-                >
-                  Services
-                </button>
-                <button
-                  onClick={() => scrollToSection("testimonials")}
-                  className="btn btn-link text-white text-decoration-none p-0 text-start"
-                >
-                  Testimonials
-                </button>
-                <button
-                  onClick={() => scrollToSection("contact")}
-                  className="btn btn-link text-white text-decoration-none p-0 text-start"
-                >
-                  Contact Us
-                </button>
+                <a href="#home">
+                  <button className="btn btn-link text-white text-decoration-none p-0 text-start">
+                    Home
+                  </button>
+                </a>
+                <a href="#about">
+                  <button className="btn btn-link text-white text-decoration-none p-0 text-start">
+                    About Us
+                  </button>
+                </a>
+                <a href="#services">
+                  <button className="btn btn-link text-white text-decoration-none p-0 text-start">
+                    Services
+                  </button>
+                </a>
+
+                <a href="#testimonials">
+                  <button className="btn btn-link text-white text-decoration-none p-0 text-start">
+                    Testimonials
+                  </button>
+                </a>
+
+                <a href="#contact">
+                  <button className="btn btn-link text-white text-decoration-none p-0 text-start">
+                    Contact Us
+                  </button>
+                </a>
+
+                <a href="#transformations">
+                  <button className="btn btn-link text-white text-decoration-none p-0 text-start">
+                    Transformations
+                  </button>
+                </a>
               </div>
             </div>
             <div className="col-lg-3 mb-3 mb-md-0">
               <h4 className="h5 mb-3 font-semibold">SERVICES</h4>
               <div className="d-flex flex-column gap-2 text-white">
-                <p className="mb-0">Yoga Classes</p>
-                <p className="mb-0">Personal Training</p>
-                <p className="mb-0">Group Fitness</p>
-                <p className="mb-0">Nutrition Guidance</p>
+                <a href="#services">
+                  <button className="btn btn-link text-white text-decoration-none p-0 text-start">
+                    Yoga Classes
+                  </button>
+                </a>
+                <a href="#services">
+                  <button className="btn btn-link text-white text-decoration-none p-0 text-start">
+                    Personal Training
+                  </button>
+                </a>
+                <a href="#services">
+                  <button className="btn btn-link text-white text-decoration-none p-0 text-start">
+                    Strength Training
+                  </button>
+                </a>
+                <a href="#services">
+                  <button className="btn btn-link text-white text-decoration-none p-0 text-start">
+                    Nutrition Guidance
+                  </button>
+                </a>
+                <a href="#services">
+                  <button className="btn btn-link text-white text-decoration-none p-0 text-start">
+                    Zumba & Cardio
+                  </button>
+                </a>
+                <a href="#services">
+                  <button className="btn btn-link text-white text-decoration-none p-0 text-start">
+                    Weight Loss Program
+                  </button>
+                </a>
               </div>
             </div>
             <div className="col-lg-3 mb-3 mb-md-0">
@@ -1030,6 +872,16 @@ function App() {
                 </div>
                 <div className="fs-4 d-flex align-items-center justify-content-center rounded-circle bg-white p-2">
                   <FaYoutube className="text-black" size={24} />
+                </div>
+              </div>
+              <div className=" text-white small mt-3">
+                <div className="d-flex align-items-center gap-2 mb-2">
+                  <Phone size={16} color="white" />
+                  <span className="text-white small">+91 63815 00790</span>
+                </div>
+                <div className="d-flex align-items-center gap-2">
+                  <Mail size={16} color="white" />
+                  <span>divyatsk772@gmail.com</span>
                 </div>
               </div>
               <div>
@@ -1062,17 +914,4 @@ function App() {
 }
 
 export default App;
-
-
-
-
-
-
-
-
-
-
-
-
-
 

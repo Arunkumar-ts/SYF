@@ -21,7 +21,7 @@ const FloatingContact = () => {
   return (
     <div className="floating-contact">
       <a
-        href="https://wa.me/919876543210"
+        href="https://wa.me/916381500790"
         target="_blank"
         rel="noopener noreferrer"
         className="btn-success contact-btn whatsapp"
@@ -29,7 +29,7 @@ const FloatingContact = () => {
         <FaWhatsapp size={24} />
       </a>
 
-      <a href="tel:+919876543210" className=" btn-primary contact-btn phone">
+      <a href="tel:+916381500790" className=" btn-primary contact-btn phone">
         <LuPhoneCall size={22} />
       </a>
 
