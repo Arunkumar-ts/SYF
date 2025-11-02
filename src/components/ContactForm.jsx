@@ -30,7 +30,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="col-12 col-md-6">
+    <div className="container">
       <div className="formglass-card p-4">
         <h3 className="fw-bold mb-4 textFont" style={{ color: "#8A2BE2" }}>
           Send Us a Message

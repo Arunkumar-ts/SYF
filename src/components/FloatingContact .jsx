@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react";
-import { FaWhatsapp } from "react-icons/fa";
-import { LuPhoneCall } from "react-icons/lu";
 import { RiArrowUpDoubleLine } from "react-icons/ri";
 
 const FloatingContact = () => {
@@ -24,13 +22,13 @@ const FloatingContact = () => {
         href="https://wa.me/916381500790"
         target="_blank"
         rel="noopener noreferrer"
-        className="btn-success contact-btn whatsapp"
+        className="whatsapp"
       >
-        <FaWhatsapp size={24} />
+        <img src="/whatsapp.png" alt="Whatsapp icon" width="50" />
       </a>
 
-      <a href="tel:+916381500790" className=" btn-primary contact-btn phone">
-        <LuPhoneCall size={22} />
+      <a href="tel:+916381500790" className="phone  ">
+        <img src="/telephone.png" alt="telephone icon" width="50" />
       </a>
 
       {showScroll && (

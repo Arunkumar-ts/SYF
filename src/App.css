@@ -204,15 +204,10 @@ html {
 
 .whatsapp {
     animation: pulse 2s infinite;
-    background: #25d366;
-    color: white;
 }
 
 .phone {
     animation: pulse 2s infinite 1s;
-    background: #007bff;
-    /* background: linear-gradient(135deg, #c39cec, #fabcdf); */
-    color: white;
 }
 
 .up {
@@ -225,7 +220,8 @@ html {
 }
 
 .footer {
-    background: rgb(97, 96, 96);
+    /* background: rgb(97, 96, 96); */
+    background:black;
 }
 
 .footer-font {

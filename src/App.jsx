@@ -4,7 +4,6 @@ import { CgMenuRightAlt } from "react-icons/cg";
 import { IoClose } from "react-icons/io5";
 import { FaCheckCircle } from "react-icons/fa";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
-import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa6";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Virtual } from "swiper/modules";
 import "swiper/css";
@@ -310,7 +309,7 @@ function App() {
                 ].map((item, i) => (
                   <li
                     key={i}
-                    className="d-flex align-items-start mb-3 about-point"
+                    className="d-flex align-items-start mb-3 about-point testFont"
                   >
                     <FaCheckCircle
                       className="me-3 mt-1"
@@ -396,7 +395,7 @@ function App() {
           </div>
 
           <div className="mb-5">
-            <div className="row g-4">
+            <div className="row g-4 d-flex align-items-center justify-content-center">
               {[
                 {
                   title: "Yoga Classes",
@@ -767,7 +766,7 @@ function App() {
           </div>
 
           <div className="row g-5">
-            <div className="col-lg-6">
+            <div className="col-12 col-md-6">
               <iframe
                 title="studio-map"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.1995558088006!2d78.13158399999999!3d9.917331699999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00c5f0b9eb886f%3A0xe1c840175f2954af!2sSharva%20Yoga%20and%20Fitness!5e0!3m2!1sen!2sin!4v1761324807730!5m2!1sen!2sin"
@@ -777,8 +776,9 @@ function App() {
                 loading="lazy"
               ></iframe>
             </div>
-
-            <ContactForm />
+            <div className="col-12 col-md-6">
+              <ContactForm />
+            </div>
           </div>
         </div>
       </section>
@@ -787,7 +787,7 @@ function App() {
       <footer className="footer text-white py-5">
         <div className="container">
           <div className="row g-4">
-            <div className="col-lg-3 mb-3 mb-md-0">
+            <div className="col-12 col-lg mb-3 mb-md-0">
               <a className="logo d-flex text-decoration-none " href="#home">
                 <img
                   src="SharvaLogo.png"
@@ -803,7 +803,7 @@ function App() {
                 living.
               </p>
             </div>
-            <div className="col-lg-3 mb-3 mb-md-0 secondaryFont">
+            <div className="col-12 col-md-6 col-lg-3 mb-3 mb-md-0 secondaryFont">
               <h4 className="h5 mb-3 font-semibolds textFont">QUICK LINKS</h4>
               <div className="d-flex flex-column gap-2">
                 <a href="#home">
@@ -841,7 +841,7 @@ function App() {
                 </a>
               </div>
             </div>
-            <div className="col-lg-3 mb-3 mb-md-0 secondaryFont">
+            <div className="col-12 col-md-6 col-lg-3 mb-3 mb-md-0 secondaryFont">
               <h4 className="h5 mb-3 font-semibold textFont">SERVICES</h4>
               <div className="d-flex flex-column gap-2 text-white">
                 <a href="#services">
@@ -876,20 +876,35 @@ function App() {
                 </a>
               </div>
             </div>
-            <div className="col-lg-3 mb-3 mb-md-0 secondaryFont">
+            <div className=" col-12 col-md-6 col-lg-3 mb-3 mb-md-0 secondaryFont">
               <h4 className="h5 font-semibold mb-3 textFont">FOLLOW US</h4>
-              <div className="d-flex gap-3">
-                <div className="fs-4 d-flex align-items-center justify-content-center rounded-circle bg-white p-2">
-                  <FaFacebook className="text-black" size={24} />
-                </div>
-                <div className="fs-4 d-flex align-items-center justify-content-center rounded-circle bg-white p-2">
-                  <FaInstagram className="text-black" size={24} />
-                </div>
-                <div className="fs-4 d-flex align-items-center justify-content-center rounded-circle bg-white p-2">
-                  <FaYoutube className="text-black" size={24} />
-                </div>
+              <div className="d-flex gap-3 my-4">
+                <a href="">
+                  <img
+                    src="/facebook.png"
+                    alt="Yoga practice"
+                    className="img-fluid rounded-4 shadow-lg about-img"
+                    width="40"
+                  />
+                </a>
+                <a href="https://www.instagram.com/sharva_yoga_and_fitness?utm_source=qr&igsh=MXEwa3F0aGcxNXljZQ%3D%3D">
+                  <img
+                    src="/instagram.png"
+                    alt="Yoga practice"
+                    className="img-fluid rounded-4 shadow-lg about-img"
+                    width="40"
+                  />
+                </a>
+                <a href="">
+                  <img
+                    src="/youtube.png"
+                    alt="Yoga practice"
+                    className="img-fluid rounded-4 shadow-lg about-img"
+                    width="40"
+                  />
+                </a>
               </div>
-              <div className=" text-white small mt-3">
+              <div className=" text-white small mt-3 secondaryFont">
                 <div className="d-flex align-items-center gap-2 mb-2">
                   <Phone size={16} color="white" />
                   <span className="text-white small">+91 63815 00790</span>
@@ -929,36 +944,4 @@ function App() {
 }
 
 export default App;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
