@@ -9,16 +9,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Virtual } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/autoplay";
-import FloatingContact from "./FloatingContact ";
+import FloatingContact from "./components/FloatingContact ";
+import ContactForm from "./components/ContactForm";
+import { FaQuoteRight } from "react-icons/fa";
 
 function App() {
   const [show, setShow] = useState(false);
-  const [contactForm, setContactForm] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
 
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
@@ -26,12 +22,6 @@ function App() {
   const scrollToSection = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     setShow(false);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert("Thank you for your message! We will get back to you soon.");
-    setContactForm({ name: "", email: "", phone: "", message: "" });
   };
 
   const videoSources = [
@@ -742,83 +732,77 @@ function App() {
       {/* Testimonials */}
       <section id="testimonials" className="py-5">
         <div className="container">
-          <h2 className="text-center mb-2 section-title">
-            What Our Clients Say
-          </h2>
-          <p className="text-center section-subtitle mb-5 mx-auto">
-            Hear from women who have transformed their lives at Saara Yoga &
-            Fitness
-          </p>
+          <div className="text-center mb-5">
+            <h1 className="display-5 fw-bold mb-2" style={{ color: "#333" }}>
+              What Our <span style={{ color: "#E75480" }}>Clients</span> Say 💖
+            </h1>
+            <p className="text-muted">
+              Inspiring journeys of women who found strength, balance, and
+              confidence with Sharva Yoga & Fitness
+            </p>
+          </div>
 
-          <div className="row g-4">
+          <div className="row g-4 justify-content-center">
             {[
               {
-                name: "Lakshmi R.",
-                role: "Yoga Student",
-                text: "Saara Yoga has completely transformed my life. The instructors are knowledgeable and caring, and the atmosphere is so welcoming. I feel stronger and more balanced than ever!",
-                rating: 5,
-                program: "Yoga Classes",
+                name: "Sangavi NandaKumar.",
+                text: "It’s been a month since I joined, and I’ve really enjoyed the sessions! Divya mam provides creative and effective workouts that make every class engaging. Each week includes a good mix of cardio, strength training, Zumba, yoga, and stretches. She also provides a simple and easy-to-follow diet chart, which helps in maintaining consistency and achieving results.",
               },
               {
-                name: "Priya M.",
-                role: "Weight Loss Member",
-                text: "Best fitness center in the city! The combination of yoga and modern fitness training is perfect. I have achieved my fitness goals faster than I imagined. Lost 15kg and feeling fantastic!",
-                rating: 5,
-                program: "Weight Loss Program",
+                name: "Ramya G.",
+                text: "I absolutely loved this yoga class! The instructor Divya mam was warm, knowledgeable, and guided us through each pose with clear, calming instructions. The atmosphere was peaceful and welcoming, making it easy to relax and fully immerse myself in the practice. Whether you're a beginner or more experienced, this class offers the perfect balance of challenge and relaxation. It’s the perfect way to reset and recharge—highly recommended for anyone looking to release tension and increase flexibility!",
               },
               {
-                name: "Deepa N.",
-                role: "New Mother",
-                text: "The pregnancy weight loss program helped me stay fit and recover beautifully after childbirth. The instructors are specially trained and very supportive. Highly recommended!",
-                rating: 5,
-                program: "Pregnancy Weight Loss",
+                name: "Rajalakshmi Chandran.",
+                text: "I'm glad to have found the proper spot for my fitness. Sharva Yoga & Fitness Centre provides a variety of activities such as power yoga, strength training, cardio, and so on. Instructor Divya constantly devises new routines to keep us interested while working out. I'm attending her online yoga lessons from overseas... excellent site for women looking to lose weight and increase flexibility.",
               },
               {
-                name: "Arjun T.",
-                role: "CrossFit Member",
-                text: "Great facilities, excellent trainers, and a wonderful community. The CrossFit program really pushed my limits and I have seen amazing strength gains. I look forward to every session!",
-                rating: 5,
-                program: "CrossFit Training",
+                name: "Priya Sasi.",
+                text: "Sharva Yoga and Fitness class is a wonderful place. Divya Ma'am is very friendly with everyone. She always asks about our problems and provides solutions. The place is so peaceful, and I feel very happy there. I joined because I was suffering from hormonal issues for 6 months, and now my problem is solved. I am so happy! Thank you, Divya Ma'am.",
               },
               {
-                name: "Shruti K.",
-                role: "Pre-Bridal Program",
-                text: "Thanks to Saara, I looked and felt my absolute best on my wedding day. The pre-bridal program is perfectly designed and the trainers kept me motivated throughout. Forever grateful!",
-                rating: 5,
-                program: "Pre-Bridal Weight Loss",
-              },
-              {
-                name: "Radha S.",
-                role: "Zumba Enthusiast",
-                text: "Zumba classes here are so much fun! I never thought working out could be this enjoyable. Lost weight while dancing - what more could I ask for? Love the energy and the instructor!",
-                rating: 5,
-                program: "Zumba Fitness",
+                name: "Jeya MathanKumar.",
+                text: "I am very happy to have joined the online fitness class in Sharva Yoga. I joined in sep 2023 and have seen a huge difference in my weight and health.Divya takes huge effort to provide innovative workouts everyday. Her food recommendation has helped in the weight loss. I will recommend Sharva Yoga to anyone who is looking to change their lifestyle through exercise and healthy food habits.",
               },
             ].map((testimonial, idx) => (
-              <div key={idx} className="col-md-6">
-                <div className="card testimonial-card border-0 shadow-sm h-100">
+              <div key={idx} className="col-12 col-sm-10 col-md-6 col-lg-4">
+                <div className="testimonial-card h-100">
                   <div className="card-body p-4">
                     <div className="d-flex align-items-center mb-3">
-                      <div className="testimonial-avatar">
-                        {testimonial.name.charAt(0)}
+                      <div className="testimonial-avatar rounded-circle me-3 px-3 py-2 fw-bold">
+                        {testimonial.name.charAt(0).toUpperCase()}
                       </div>
-                      <div>
-                        <h4 className="testimonial-name">{testimonial.name}</h4>
-                        <p className="testimonial-role">{testimonial.role}</p>
+                      <div className="d-flex align-items-center justify-content-between w-100">
+                        <div>
+                          <h5
+                            className="fw-bold mb-0"
+                            style={{ color: "#8A2BE2" }}
+                          >
+                            {testimonial.name}
+                          </h5>
+                          <small className="text-muted">⭐⭐⭐⭐⭐</small>
+                        </div>
+                        <FaQuoteRight
+                          style={{
+                            opacity: 0.8,
+                            fontSize: "1.3rem",
+                          }}
+                        />
                       </div>
                     </div>
-                    <div className="mb-3">
+
+                    <p className="testimonial-text fst-italic text-dark">
+                      “{testimonial.text}”
+                    </p>
+
+                    <div className="d-flex gap-1">
                       {[...Array(testimonial.rating)].map((_, i) => (
-                        <span key={i} className="text-warning fs-5">
-                          ⭐
-                        </span>
+                        <i
+                          key={i}
+                          className="bi bi-star-fill"
+                          style={{ color: "#FFD700" }}
+                        ></i>
                       ))}
-                    </div>
-                    <p className="testimonial-text">"{testimonial.text}"</p>
-                    <div className="border-top pt-3">
-                      <small className="testimonial-program">
-                        Program: {testimonial.program}
-                      </small>
                     </div>
                   </div>
                 </div>
@@ -831,33 +815,38 @@ function App() {
       {/* Tips & FAQ */}
       <section id="faq" className="py-5">
         <div className="container">
-          <div className="row">
-            {/* Tips */}
+          <div className="row ">
+            {/* Fitness & Wellness Tips */}
             <div className="col-lg-6">
-              <h2 className="h3 fw-bold mb-4" style={{ color: "#333" }}>
-                Wellness Tips
+              <h2
+                className="display-6 fw-bold mb-4 ps-3"
+                style={{ color: "#333" }}
+              >
+                <span style={{ color: "#E75480" }}>Women's</span> <br /> Fitness
+                & Wellness Tips
               </h2>
-              <div className="d-flex flex-column gap-3">
+
+              <div className="d-flex flex-column gap-3 mb-3">
                 {[
                   {
-                    tip: "Stay Hydrated",
-                    desc: "Drink at least 8 glasses of water daily to keep your body functioning optimally",
+                    tip: "Stay Consistent with Your Workouts",
+                    desc: "Aim for at least 30 minutes of exercise, 5 days a week. Consistency builds strength and confidence.",
                   },
                   {
-                    tip: "Practice Consistency",
-                    desc: "Regular practice is better than intense sporadic sessions",
+                    tip: "Balance Cardio & Strength Training",
+                    desc: "Combine yoga, dance, and strength workouts to tone muscles and boost metabolism.",
                   },
                   {
-                    tip: "Listen to Your Body",
-                    desc: "Rest when needed and never push through pain",
+                    tip: "Hydrate and Nourish",
+                    desc: "Drink plenty of water and include protein-rich foods to support your workouts and recovery.",
                   },
                   {
-                    tip: "Breathe Properly",
-                    desc: "Focus on deep, controlled breathing during all exercises",
+                    tip: "Prioritize Rest & Recovery",
+                    desc: "Sleep 7–8 hours daily and practice yoga or stretching to relax your muscles.",
                   },
                   {
-                    tip: "Eat Mindfully",
-                    desc: "Combine your fitness routine with balanced nutrition for best results",
+                    tip: "Empower Your Mind",
+                    desc: "A healthy body starts with a positive mindset. Practice deep breathing and mindfulness daily.",
                   },
                 ].map((item, idx) => (
                   <div
@@ -880,48 +869,53 @@ function App() {
             </div>
 
             {/* FAQ Accordion */}
-            <div className="col-lg-6 mt-4 mt-md-0">
-              <h2 className="h3 fw-bold mb-4" style={{ color: "#333" }}>
-                Frequently Asked Questions
+            <div className="col-lg-6 mt-4 mt-md-0 mb-3">
+              <h2
+                className="display-6 fw-bold mb-4 ps-3"
+                style={{ color: "#333" }}
+              >
+                Frequently Asked
+                <span style={{ color: "#E75480" }}> Questions</span>
               </h2>
+
               <Accordion defaultActiveKey="0">
                 {[
                   {
-                    q: "Do I need prior experience to join?",
-                    a: "Not at all! We welcome complete beginners and offer classes for all fitness levels. Our certified instructors will guide you through each step and modify exercises based on your ability.",
+                    q: "Is this program only for women?",
+                    a: "Yes! Our fitness and yoga sessions are designed specifically for women, focusing on strength, flexibility, and hormonal balance.",
                   },
                   {
-                    q: "What should I bring to my first class?",
-                    a: "Just wear comfortable workout clothing. We provide yoga mats, props, and all necessary equipment. Bring a water bottle and a positive attitude!",
+                    q: "Do I need to be fit to start?",
+                    a: "Not at all. We welcome all fitness levels — from beginners to advanced. Our trainers modify every session to match your capability.",
                   },
                   {
-                    q: "How long are the classes?",
-                    a: "Most classes are 60 minutes long. Some specialized sessions like weight loss programs may last 90 minutes. Check our schedule for specific class durations.",
+                    q: "Are online sessions available?",
+                    a: "Yes! We conduct daily online fitness & yoga sessions for women who prefer working out from home.",
                   },
                   {
-                    q: "Can I try a class before committing?",
-                    a: "Yes! We offer a free trial session for all new members. Book your free session through our contact form or call us directly.",
+                    q: "What kind of workouts do you offer?",
+                    a: "We offer a mix of strength training, HIIT, dance fitness, and yoga — all customized to your fitness goals.",
                   },
                   {
-                    q: "What are your operating hours?",
-                    a: "We are open Monday to Saturday, 6 AM to 9 PM, and Sunday 7 AM to 1 PM. We offer multiple batch timings throughout the day to fit your schedule.",
+                    q: "How does yoga fit into the program?",
+                    a: "Yoga complements your fitness routine by improving flexibility, posture, and relaxation while reducing stress.",
                   },
                   {
-                    q: "Do you offer online classes?",
-                    a: "Yes, we offer online yoga classes from 4 PM to 5 PM daily. This is perfect for those who prefer working out from home.",
+                    q: "Can I join if I have specific health conditions?",
+                    a: "Yes, but we recommend consulting your doctor first. Our trainers can tailor sessions for back pain, PCOS, or postnatal recovery.",
                   },
                   {
-                    q: "What is included in the weight loss program?",
-                    a: "Our comprehensive weight loss program includes personalized workout plans, nutrition guidance with Herbalife products, regular progresstracking, and one-on-one support from certified trainers.",
+                    q: "Do you offer personal training for women?",
+                    a: "Absolutely! We provide one-on-one coaching sessions for personalized fitness and nutrition guidance.",
                   },
                   {
-                    q: "Is the pre-bridal program customizable?",
-                    a: "Absolutely! We create a personalized plan based on your wedding date, current fitness level, and specific goals. Whether you want to lose weight, tone up, or gain flexibility, we tailor the program for you.",
+                    q: "What should I bring to the class?",
+                    a: "Wear breathable workout clothes, bring a towel, a water bottle, and your positive energy!",
                   },
                 ].map((faq, idx) => (
                   <Accordion.Item eventKey={idx.toString()} key={idx}>
-                    <Accordion.Header>
-                      <strong>{faq.q}</strong>
+                    <Accordion.Header style={{ backgroundColor: "#F3E8FF" }}>
+                      <h4 className="h6 fw-bold mb-2">{faq.q}</h4>
                     </Accordion.Header>
                     <Accordion.Body className="bg-light">
                       {faq.a}
@@ -935,54 +929,16 @@ function App() {
       </section>
 
       {/* Contact */}
-      <section
-        id="contact"
-        className="py-5"
-        style={{ background: "linear-gradient(135deg, #8A2BE2, #E75480)" }}
-      >
-        <div className="container">
-          <h2 className="text-center mb-2 display-5 fw-bold text-white">
-            Get In Touch
-          </h2>
-          <p
-            className="text-center mb-5 mx-auto text-white opacity-75"
-            style={{ maxWidth: "600px" }}
-          >
-            Ready to start your wellness journey? Reach out to us today!
-          </p>
-          <h3 className="h4 fw-bold mb-4 text-white">Contact Information</h3>
-          <div className="d-flex flex-column gap-4">
-            <div className="d-flex align-items-start text-white">
-              <MapPin className="me-3 mt-1 flex-shrink-0" size={24} />
-              <div>
-                <p className="fw-semibold mb-1">Address</p>
-                <p className="mb-0">
-                  123 Wellness Street, Chennai, Tamil Nadu 600001
-                </p>
-              </div>
-            </div>
-            <div className="d-flex align-items-center text-white">
-              <Phone className="me-3 flex-shrink-0" size={24} />
-              <div>
-                <p className="fw-semibold mb-1">Phone</p>
-                <p className="mb-0">+91 98765 43210</p>
-              </div>
-            </div>
-            <div className="d-flex align-items-center text-white">
-              <Mail className="me-3 flex-shrink-0" size={24} />
-              <div>
-                <p className="fw-semibold mb-1">Email</p>
-                <p className="mb-0">info@saarayoga.com</p>
-              </div>
-            </div>
-            <div className="d-flex align-items-start text-white">
-              <Clock className="me-3 mt-1 flex-shrink-0" size={24} />
-              <div>
-                <p className="fw-semibold mb-1">Hours</p>
-                <p className="mb-0">Mon-Sat: 6 AM - 9 PM</p>
-                <p className="mb-0">Sunday: 7 AM - 1 PM</p>
-              </div>
-            </div>
+      <section id="contact" className=" container-fluid ">
+        <div className="container pt-3 pb-5">
+          <div className=" row text-center">
+            <h1 className="display-4 fw-bold mb-2">
+              Get in <span style={{ color: "#E75480" }}>Touch</span>
+            </h1>
+            <p>
+              Have questions or need assistance? We're here to help you on your
+              fitness & yoga journey.
+            </p>
           </div>
 
           <div className="row g-5">
@@ -997,81 +953,37 @@ function App() {
               ></iframe>
             </div>
 
-            <div className="col-lg-6">
-              <h3 className="h4 fw-bold mb-4 text-white">Send Us a Message</h3>
-              <div className="d-flex flex-column gap-3">
-                <input
-                  type="text"
-                  placeholder="Your Name"
-                  value={contactForm.name}
-                  onChange={(e) =>
-                    setContactForm({ ...contactForm, name: e.target.value })
-                  }
-                  className="form-control form-control-lg"
-                />
-                <input
-                  type="email"
-                  placeholder="Your Email"
-                  value={contactForm.email}
-                  onChange={(e) =>
-                    setContactForm({ ...contactForm, email: e.target.value })
-                  }
-                  className="form-control form-control-lg"
-                />
-                <input
-                  type="tel"
-                  placeholder="Your Phone"
-                  value={contactForm.phone}
-                  onChange={(e) =>
-                    setContactForm({ ...contactForm, phone: e.target.value })
-                  }
-                  className="form-control form-control-lg"
-                />
-                <textarea
-                  placeholder="Your Message"
-                  rows="4"
-                  value={contactForm.message}
-                  onChange={(e) =>
-                    setContactForm({ ...contactForm, message: e.target.value })
-                  }
-                  className="form-control form-control-lg"
-                ></textarea>
-                <button
-                  onClick={handleSubmit}
-                  className="btn btn-light btn-lg fw-semibold"
-                  style={{ color: "#8A2BE2" }}
-                >
-                  Submit
-                </button>
-              </div>
-            </div>
+            <ContactForm />
           </div>
         </div>
-      </section>
-
-      <section className="py-4 text-center copyright-footer">
-        <a
-          href="#enroll"
-          onClick={handleClose}
-          className="btn book-free-btn fw-semibold px-4 py-2"
-        >
-          Book Free Session
-        </a>
       </section>
 
       {/* Footer */}
       <footer className="footer text-white py-5">
         <div className="container">
           <div className="row g-4">
-            <div className="col-lg-3">
-              <h3 className="h5 fw-bold mb-3">Saara Yoga & Fitness</h3>
+            <div className="col-lg-3 mb-3 mb-md-0">
+              <a className="logo d-flex text-decoration-none " href="#home">
+                <img
+                  src="SharvaLogo.png"
+                  className="img-fluid bg-white mb-4 rounded-1 pe-2"
+                  alt="Sharva Yoga & Fitness Logo"
+                  width={150}
+                />
+              </a>
               <p className="text-white footer-font w-75">
                 Transform your life through wellness, balance, and strength.
               </p>
             </div>
-            <div className="col-lg-3">
+            <div className="col-lg-3 mb-3 mb-md-0">
               <h4 className="h5 mb-3 font-semibolds">QUICK LINKS</h4>
               <div className="d-flex flex-column gap-2">
+                <button
+                  onClick={() => scrollToSection("about")}
+                  className="btn btn-link text-white text-decoration-none p-0 text-start"
+                >
+                  Home
+                </button>
                 <button
                   onClick={() => scrollToSection("about")}
                   className="btn btn-link text-white text-decoration-none p-0 text-start"
@@ -1094,11 +1006,11 @@ function App() {
                   onClick={() => scrollToSection("contact")}
                   className="btn btn-link text-white text-decoration-none p-0 text-start"
                 >
-                  Contact
+                  Contact Us
                 </button>
               </div>
             </div>
-            <div className="col-lg-3">
+            <div className="col-lg-3 mb-3 mb-md-0">
               <h4 className="h5 mb-3 font-semibold">SERVICES</h4>
               <div className="d-flex flex-column gap-2 text-white">
                 <p className="mb-0">Yoga Classes</p>
@@ -1107,7 +1019,7 @@ function App() {
                 <p className="mb-0">Nutrition Guidance</p>
               </div>
             </div>
-            <div className="col-lg-3">
+            <div className="col-lg-3 mb-3 mb-md-0">
               <h4 className="h5 font-semibold mb-3">FOLLOW US</h4>
               <div className="d-flex gap-3">
                 <div className="fs-4 d-flex align-items-center justify-content-center rounded-circle bg-white p-2">
@@ -1120,17 +1032,26 @@ function App() {
                   <FaYoutube className="text-black" size={24} />
                 </div>
               </div>
+              <div>
+                <p className="mb-0 copy-rights mt-4">
+                  Copyright &copy; 2025 All rights reserved |
+                </p>
+                <p className="mb-0 copy-rights">
+                  Sharva Yoga & Fitness | Developed by{" "}
+                  <span style={{ color: "yellow" }}>ANextTech</span>.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </footer>
 
-      <section className="py-4 text-center copyright-footer">
+      <section
+        className="py-2 text-center"
+        style={{ backgroundColor: "#F3E8FF" }}
+      >
         <p className="mb-0">
           Made with <span className="text-danger">❤️</span> for women's wellness
-          <br />
-          Copyright &copy; 2025 All rights reserved. | <br /> SHARVA Yoga &
-          Fitness | Developed by ANEXTTECH
         </p>
       </section>
 
@@ -1141,4 +1062,17 @@ function App() {
 }
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
 

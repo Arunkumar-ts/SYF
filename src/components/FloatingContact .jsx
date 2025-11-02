@@ -24,17 +24,17 @@ const FloatingContact = () => {
         href="https://wa.me/919876543210"
         target="_blank"
         rel="noopener noreferrer"
-        className="btn btn-success contact-btn whatsapp"
+        className="btn-success contact-btn whatsapp"
       >
         <FaWhatsapp size={24} />
       </a>
 
-      <a href="tel:+919876543210" className="btn btn-primary contact-btn phone">
+      <a href="tel:+919876543210" className=" btn-primary contact-btn phone">
         <LuPhoneCall size={22} />
       </a>
 
       {showScroll && (
-        <button className="btn contact-btn up mt-4" onClick={scrollToTop}>
+        <button className=" contact-btn up mt-4" onClick={scrollToTop}>
           <RiArrowUpDoubleLine size={29} />
         </button>
       )}
