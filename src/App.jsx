@@ -53,7 +53,7 @@ function App() {
               />
             </a>
 
-            <ul className="nav-list list-unstyled">
+            <ul className="nav-list list-unstyled secondaryFont">
               <li>
                 <a href="#home" className="nav-link-custom">
                   Home
@@ -83,7 +83,7 @@ function App() {
 
             <a
               href="#contact"
-              className="btn book-free-btn fw-semibold px-4 py-2"
+              className="btn book-free-btn fw-semibold px-4 py-2 textFont"
             >
               Book Free Session
             </a>
@@ -136,7 +136,7 @@ function App() {
               <Offcanvas.Body>
                 <div className="d-flex  gap-5">
                   <div className="mt-5 ps-2">
-                    <ul className="list-unstyled d-flex flex-column  gap-4">
+                    <ul className="list-unstyled d-flex flex-column  gap-4 secondaryFont">
                       <li>
                         <a
                           href="#home"
@@ -186,7 +186,7 @@ function App() {
                         <a
                           href="#contact"
                           onClick={handleClose}
-                          className="btn book-free-btn fw-semibold px-4 py-2"
+                          className="btn book-free-btn fw-semibold px-4 py-2 textFont"
                         >
                           Book Free Session
                         </a>
@@ -205,29 +205,31 @@ function App() {
         <div className="container py-3">
           <div className="row align-items-center g-4 py-4 px-3">
             <div className="col-md-6 text-white">
-              <h1 className="display-5 fw-bold mb-4" style={{ color: "#333" }}>
+              <h1
+                className="display-5 fw-bold mb-4 primeFont"
+                style={{ color: "#333" }}
+              >
                 A Safe <span style={{ color: "#E75480" }}>&</span> Supportive{" "}
                 <br />
                 Fitness Community for Women
               </h1>
-              <h4 className="fw-bold text-dark">
+              <h4 className="fw-bold text-dark secondaryFont">
                 Transform your body and mind through yoga
               </h4>
-              <p className="text-dark">
-                Discover <b>strength</b>, <b>balance</b>, and <b>inner peace</b>
-                . Our yoga programs are designed to empower women and help them
-                connect deeply with their true potential physically and
-                mentally.
+              <p className="text-black textFont">
+                Discover strength, balance, and inner peace . Our yoga programs
+                are designed to empower women and help them connect deeply with
+                their true potential physically and mentally.
               </p>
 
               <div className="hero-buttons">
                 <a href="#contact">
-                  <button className="hero-btn px-4 py-2 rounded-pill fw-semibold border-0 join-btn">
+                  <button className="hero-btn px-4 py-2 rounded-pill fw-semibold border-0 join-btn secondaryFont">
                     Join Now
                   </button>
                 </a>
                 <a href="#contact">
-                  <button className="hero-btn px-4 py-2 rounded-pill fw-semibold border border-light bg-white text-dark">
+                  <button className="hero-btn px-4 py-2 rounded-pill fw-semibold border border-light bg-white text-dark secondaryFont">
                     Contact Us
                   </button>
                 </a>
@@ -239,18 +241,18 @@ function App() {
                   <div className="hero-icon purple rounded-circle p-2">
                     <MapPin className="text-white" size={20} />
                   </div>
-                  <address className="text-dark m-0 hero-LT">
+                  <address className="text-dark m-0 hero-LT textFont">
                     <b>Sharva Studio:</b> <br />
                     Karthik illam, 231 G, 2nd floor, Kamarajar Salai, near
                     Manimaran Bakery, Madurai
                   </address>
                 </div>
 
-                <div className="hero-contact-item">
+                <div className="hero-contact-item ">
                   <div className="hero-icon pink rounded-circle p-2">
                     <Clock className="text-white" size={20} />
                   </div>
-                  <div className="text-dark hero-LT">
+                  <div className="text-dark hero-LT textFont">
                     <b>Batches:</b>
                     <p className="m-0">6AM - 7AM • 11AM - 12PM</p>
                     <p className="m-0">Online only: 4PM - 5PM</p>
@@ -278,27 +280,27 @@ function App() {
           <div className="row align-items-center g-2">
             <div className="col-lg-6 py-5 px-4">
               <div className="mb-4">
-                <h2 className="fw-bold display-6 text-dark mb-3">
+                <h2 className="fw-bold display-6 text-dark mb-3 textFont">
                   What You Get with{" "}
                   <span style={{ color: "#E75480" }}>Sharva</span>
                 </h2>
-                <p className="text-uppercase about-welcome p-2">
+                <p className="text-uppercase about-welcome p-2 secondaryFont">
                   Welcome to Sharva Yoga & Fitness
                 </p>
               </div>
 
-              <p className="text-muted ">
+              <p className="text-muted testFont">
                 At Sharva Yoga and Fitness, we go beyond regular workouts we
                 guide you to build a balanced, healthy, and mindful lifestyle.
               </p>
 
-              <p className="text-muted ">
+              <p className="text-muted testFont">
                 Our programs combine traditional yoga with modern fitness
                 techniques to strengthen your body, calm your mind, and energize
                 your spirit.
               </p>
 
-              <ul className="list-unstyled mt-4">
+              <ul className="list-unstyled mt-4 testFont ">
                 {[
                   "Personalized yoga and fitness sessions for all levels",
                   "Certified trainers and holistic wellness support",
@@ -338,7 +340,7 @@ function App() {
       <section className="container-fluid my-5 py-3">
         <div className="d-flex justify-content-center mb-4 ">
           <a href="https://www.instagram.com/sharva_yoga_and_fitness?utm_source=qr&igsh=MXEwa3F0aGcxNXljZQ%3D%3D">
-            <button className="py-2  px-4 rounded border-0 book-free-btn">
+            <button className="py-2  px-4 rounded border-0 book-free-btn textFont">
               Follow us on Instagram
             </button>
           </a>
@@ -382,13 +384,13 @@ function App() {
       </section>
 
       {/* Services */}
-      <section id="services" className="py-5">
+      <section id="services" className="pb-3">
         <div className="container">
-          <div className="text-center mb-5">
+          <div className="text-center mb-5 textFont">
             <h1 className="display-5 fw-bold mb-2" style={{ color: "#333" }}>
               <span style={{ color: "#E75480" }}>Our</span> Specialized Services
             </h1>
-            <p className="text-muted">
+            <p className="text-dark secondaryFont">
               Empowering women through fitness, yoga, and holistic healthcare
             </p>
           </div>
@@ -451,8 +453,8 @@ function App() {
                   img: "service5.jpg",
                 },
               ].map((service, idx) => (
-                <div key={idx} className="col-md-6 col-lg-4">
-                  <div className="card service-card h-100 border-0 shadow-sm">
+                <div key={idx} className="col-md-6 col-lg-4 px-5 px-md-3">
+                  <div className="card service-card h-100 border-0 shadow-sm rounded-4">
                     <img
                       src={service.img}
                       alt={service.title}
@@ -463,11 +465,16 @@ function App() {
                       className="card-body p-4 rounded-bottom-4"
                       style={{ borderBottom: "4px solid #E75480" }}
                     >
-                      <h5 className="fw-bold" style={{ color: "#E75480" }}>
+                      <h5
+                        className="fw-bold textFont"
+                        style={{ color: "#E75480" }}
+                      >
                         {service.title}
                       </h5>
-                      <h6 className="text-muted mb-2">{service.subtitle}</h6>
-                      <p className="text-dark">{service.desc}</p>
+                      <h6 className="text-muted mb-2 textFont">
+                        {service.subtitle}
+                      </h6>
+                      <p className="text-dark secondaryFont">{service.desc}</p>
                     </div>
                   </div>
                 </div>
@@ -480,10 +487,10 @@ function App() {
       {/* Transformations */}
       <section id="transformations" className=" py-4">
         <div className="text-center mb-4 container">
-          <h2 className="fw-bold display-6" style={{ color: "#333" }}>
+          <h2 className="fw-bold display-6 textFont" style={{ color: "#333" }}>
             <span style={{ color: "#E75480" }}>Real</span> Transformations ✨
           </h2>
-          <p className="text-muted mb-0">
+          <p className="text-dark mb-0 secondaryFont">
             Inspiring fitness journeys of women who changed their lives with{" "}
             <b>Sharva Yoga</b>
           </p>
@@ -537,10 +544,13 @@ function App() {
       <section id="testimonials" className="py-5">
         <div className="container">
           <div className="text-center mb-5">
-            <h1 className="display-5 fw-bold mb-2" style={{ color: "#333" }}>
+            <h1
+              className="display-5 fw-bold mb-2 textFont"
+              style={{ color: "#333" }}
+            >
               What Our <span style={{ color: "#E75480" }}>Users Love</span> 💖
             </h1>
-            <p className="text-muted">
+            <p className="text-dark secondaryFont">
               Inspiring journeys of women who found strength, balance, and
               confidence with Sharva Yoga & Fitness
             </p>
@@ -569,17 +579,20 @@ function App() {
                 text: "I am very happy to have joined the online fitness class in Sharva Yoga. I joined in sep 2023 and have seen a huge difference in my weight and health.Divya takes huge effort to provide innovative workouts everyday. Her food recommendation has helped in the weight loss. I will recommend Sharva Yoga to anyone who is looking to change their lifestyle through exercise and healthy food habits.",
               },
             ].map((testimonial, idx) => (
-              <div key={idx} className="col-12 col-sm-10 col-md-6 col-lg-4">
+              <div
+                key={idx}
+                className="col-12 col-sm-10 col-md-6 col-lg-4 px-5 px-md-3"
+              >
                 <div className="testimonial-card h-100">
                   <div className="card-body p-4">
                     <div className="d-flex align-items-center mb-3">
-                      <div className="testimonial-avatar rounded-circle me-3 px-3 py-2 fw-bold">
+                      <div className="testimonial-avatar rounded-circle me-3 px-3 py-2 fw-bold primeFont">
                         {testimonial.name.charAt(0).toUpperCase()}
                       </div>
                       <div className="d-flex align-items-center justify-content-between w-100">
                         <div>
                           <h5
-                            className="fw-bold mb-0"
+                            className="fw-bold mb-0 textFont"
                             style={{ color: "#8A2BE2" }}
                           >
                             {testimonial.name}
@@ -595,7 +608,7 @@ function App() {
                       </div>
                     </div>
 
-                    <p className="testimonial-text fst-italic text-dark">
+                    <p className="testimonial-text text-dark secondaryFont">
                       “{testimonial.text}”
                     </p>
 
@@ -621,9 +634,9 @@ function App() {
         <div className="container">
           <div className="row ">
             {/* Fitness & Wellness Tips */}
-            <div className="col-lg-6">
+            <div className="col-lg-6 px-4">
               <h2
-                className="display-6 fw-bold mb-4 ps-3"
+                className="display-6 fw-bold mb-4 textFont"
                 style={{ color: "#333" }}
               >
                 <span style={{ color: "#E75480" }}>Women's</span> <br /> Fitness
@@ -660,12 +673,14 @@ function App() {
                   >
                     <div className="card-body p-4">
                       <h4
-                        className="h6 fw-bold mb-2"
+                        className="h6 fw-bold mb-2 textFont"
                         style={{ color: "#8A2BE2" }}
                       >
                         {item.tip}
                       </h4>
-                      <p className="text-dark mb-0">{item.desc}</p>
+                      <p className="text-dark mb-0 secondaryFont">
+                        {item.desc}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -673,9 +688,9 @@ function App() {
             </div>
 
             {/* FAQ Accordion */}
-            <div className="col-lg-6 mt-4 mt-md-0 mb-3">
+            <div className="col-lg-6 mt-4 mt-md-0 mb-3 px-4">
               <h2
-                className="display-6 fw-bold mb-4 ps-3"
+                className="display-6 fw-bold mb-4 textFont"
                 style={{ color: "#333" }}
               >
                 Frequently Asked
@@ -719,15 +734,15 @@ function App() {
                 ].map((faq, idx) => (
                   <Accordion.Item eventKey={idx.toString()} key={idx}>
                     <Accordion.Header style={{ backgroundColor: "#F3E8FF" }}>
-                      <div className=" d-flex gap-2">
-                        <h4 className="h6 fw-bold mb-2">
+                      <div className=" d-flex gap-2 textFont">
+                        <h4 className="h6 fw-bold mb-2 ">
                           {idx + 1}
                           {"."}
                         </h4>
                         <h4 className="h6 fw-bold mb-2">{faq.q}</h4>
                       </div>
                     </Accordion.Header>
-                    <Accordion.Body className="bg-light">
+                    <Accordion.Body className="bg-light secondaryFont">
                       {faq.a}
                     </Accordion.Body>
                   </Accordion.Item>
@@ -742,10 +757,10 @@ function App() {
       <section id="contact" className=" container-fluid ">
         <div className="container pt-3 pb-5">
           <div className=" row text-center">
-            <h1 className="display-4 fw-bold mb-2">
+            <h1 className="display-4 fw-bold mb-2 textFont">
               Get in <span style={{ color: "#E75480" }}>Touch</span> 🤝
             </h1>
-            <p>
+            <p className="text-dark secondaryFont">
               Have questions or need assistance? We're here to help you on your
               fitness & yoga journey.
             </p>
@@ -781,15 +796,15 @@ function App() {
                   width={150}
                 />
               </a>
-              <p className="text-white footer-font w-75">
+              <p className="text-white footer-font w-75 secondaryFont">
                 Find your balance, breathe deeply, and rediscover yourself. At
                 Sharva, we create a safe and supportive space where women
                 transform their minds and bodies through yoga and mindful
                 living.
               </p>
             </div>
-            <div className="col-lg-3 mb-3 mb-md-0">
-              <h4 className="h5 mb-3 font-semibolds">QUICK LINKS</h4>
+            <div className="col-lg-3 mb-3 mb-md-0 secondaryFont">
+              <h4 className="h5 mb-3 font-semibolds textFont">QUICK LINKS</h4>
               <div className="d-flex flex-column gap-2">
                 <a href="#home">
                   <button className="btn btn-link text-white text-decoration-none p-0 text-start">
@@ -826,8 +841,8 @@ function App() {
                 </a>
               </div>
             </div>
-            <div className="col-lg-3 mb-3 mb-md-0">
-              <h4 className="h5 mb-3 font-semibold">SERVICES</h4>
+            <div className="col-lg-3 mb-3 mb-md-0 secondaryFont">
+              <h4 className="h5 mb-3 font-semibold textFont">SERVICES</h4>
               <div className="d-flex flex-column gap-2 text-white">
                 <a href="#services">
                   <button className="btn btn-link text-white text-decoration-none p-0 text-start">
@@ -861,8 +876,8 @@ function App() {
                 </a>
               </div>
             </div>
-            <div className="col-lg-3 mb-3 mb-md-0">
-              <h4 className="h5 font-semibold mb-3">FOLLOW US</h4>
+            <div className="col-lg-3 mb-3 mb-md-0 secondaryFont">
+              <h4 className="h5 font-semibold mb-3 textFont">FOLLOW US</h4>
               <div className="d-flex gap-3">
                 <div className="fs-4 d-flex align-items-center justify-content-center rounded-circle bg-white p-2">
                   <FaFacebook className="text-black" size={24} />
@@ -884,7 +899,7 @@ function App() {
                   <span>divyatsk772@gmail.com</span>
                 </div>
               </div>
-              <div>
+              <div className="textFont">
                 <p className="mb-0 copy-rights mt-4">
                   Copyright &copy; 2025 All rights reserved |
                 </p>
@@ -902,7 +917,7 @@ function App() {
         className="py-2 text-center"
         style={{ backgroundColor: "#F3E8FF" }}
       >
-        <p className="mb-0">
+        <p className="mb-0 textFont">
           Made with <span className="text-danger">❤️</span> for women's wellness
         </p>
       </section>
@@ -914,4 +929,36 @@ function App() {
 }
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

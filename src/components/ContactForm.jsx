@@ -32,7 +32,7 @@ const ContactForm = () => {
   return (
     <div className="col-12 col-md-6">
       <div className="formglass-card p-4">
-        <h3 className="fw-bold mb-4" style={{ color: "#8A2BE2" }}>
+        <h3 className="fw-bold mb-4 textFont" style={{ color: "#8A2BE2" }}>
           Send Us a Message
         </h3>
 
@@ -44,7 +44,10 @@ const ContactForm = () => {
           {({ touched, errors }) => (
             <Form noValidate>
               <div className="mb-3 text-start">
-                <label htmlFor="name" className="form-label fw-semibold">
+                <label
+                  htmlFor="name"
+                  className="form-label fw-semibold textFont"
+                >
                   Name
                 </label>
                 <Field
@@ -64,7 +67,10 @@ const ContactForm = () => {
               </div>
 
               <div className="mb-3 text-start">
-                <label htmlFor="phone" className="form-label fw-semibold">
+                <label
+                  htmlFor="phone"
+                  className="form-label fw-semibold textFont"
+                >
                   Phone Number
                 </label>
                 <Field
@@ -84,7 +90,10 @@ const ContactForm = () => {
               </div>
 
               <div className="mb-3 text-start">
-                <label htmlFor="comment" className="form-label fw-semibold">
+                <label
+                  htmlFor="comment"
+                  className="form-label fw-semibold textFont"
+                >
                   Message
                 </label>
                 <Field
@@ -107,7 +116,7 @@ const ContactForm = () => {
               <div>
                 <button
                   type="submit"
-                  className=" book-free-btn text-white px-5 py-2"
+                  className=" book-free-btn text-white px-5 py-2 secondaryFont fw-bold"
                   style={{ backgroundColor: "#E75480" }}
                 >
                   Submit

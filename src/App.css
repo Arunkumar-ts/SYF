@@ -6,6 +6,18 @@ html {
     scroll-behavior: smooth;
 }
 
+.textFont {
+    font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+.primeFont {
+    font-family: 'Playfair Display', sans-serif;
+}
+
+.secondaryFont {
+    font-family: 'Titillium Web', sans-serif;
+}
+
 .nav-list {
     display: flex;
     align-items: center;
@@ -24,7 +36,6 @@ html {
     font-weight: 500;
     transition: all 0.3s ease;
     position: relative;
-    font-family: 'Bricolage Grotesque', sans-serif;
     font-weight: 700;
 }
 
@@ -58,8 +69,6 @@ html {
     color: #fff;
     transition: all 0.3s ease;
     text-decoration: none;
-    font-family: 'Bricolage Grotesque', sans-serif;
-
 }
 
 .book-free-btn:hover {
@@ -264,6 +273,7 @@ html {
     transform: translateX(5px);
     transition: all 0.3s ease;
     color: #8A2BE2;
+    cursor: pointer;
 }
 
 .about-img-wrapper {
