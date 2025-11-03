@@ -413,13 +413,13 @@ function App() {
                   title: "Zumba & Cardio",
                   subtitle: "Dance Your Way to Fitness",
                   desc: "Fun, energetic, calorie-burning workouts with music and rhythm to keep your heart healthy.",
-                  img: "service1.jpg",
+                  img: "Zumba & Cardio.jpg",
                 },
                 {
                   title: "Music & Fun Workouts",
                   subtitle: "Move, Groove & Glow",
                   desc: "Dynamic group sessions designed to make fitness enjoyable and social for women of all ages.",
-                  img: "service4.jpg",
+                  img: "Music & Fun Workouts.jpg",
                 },
                 {
                   title: "Healthy Diet Plan",
@@ -443,13 +443,13 @@ function App() {
                   title: "Postpartum Workout",
                   subtitle: "Regain Strength After Pregnancy",
                   desc: "Safe postpartum recovery workouts designed to rebuild strength and flexibility.",
-                  img: "service6.jpeg",
+                  img: "Postpartum Workout.jpg",
                 },
                 {
                   title: "Irregular Periods Wellness",
                   subtitle: "Regain Rhythm & Balance",
                   desc: "Gentle yoga, breathing, and lifestyle corrections for menstrual cycle regularity.",
-                  img: "service5.jpg",
+                  img: "Irregular Periods Wellness.jpg",
                 },
               ].map((service, idx) => (
                 <div key={idx} className="col-md-6 col-lg-4 px-5 px-md-3">
@@ -470,7 +470,7 @@ function App() {
                       >
                         {service.title}
                       </h5>
-                      <h6 className="text-muted mb-2 textFont">
+                      <h6 className="text-dark mb-2 textFont">
                         {service.subtitle}
                       </h6>
                       <p className="text-dark secondaryFont">{service.desc}</p>
@@ -580,9 +580,12 @@ function App() {
             ].map((testimonial, idx) => (
               <div
                 key={idx}
-                className="col-12 col-sm-10 col-md-6 col-lg-4 px-5 px-md-3"
+                className="col-12 col-sm-10 col-md-6 col-lg-4 px-5 px-md-3 "
               >
-                <div className="testimonial-card h-100">
+                <div
+                  className="testimonial-card h-100"
+                  style={{ borderBottom: "4px solid #E75480" }}
+                >
                   <div className="card-body p-4">
                     <div className="d-flex align-items-center mb-3">
                       <div className="testimonial-avatar rounded-circle me-3 px-3 py-2 fw-bold primeFont">
@@ -667,8 +670,11 @@ function App() {
                 ].map((item, idx) => (
                   <div
                     key={idx}
-                    className="card border-0"
-                    style={{ backgroundColor: "#F3E8FF" }}
+                    className="card"
+                    style={{
+                      borderLeft: "4px solid #E75480",
+                      backgroundColor: "#F3E8FF",
+                    }}
                   >
                     <div className="card-body p-4">
                       <h4
@@ -771,7 +777,7 @@ function App() {
                 title="studio-map"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.1995558088006!2d78.13158399999999!3d9.917331699999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00c5f0b9eb886f%3A0xe1c840175f2954af!2sSharva%20Yoga%20and%20Fitness!5e0!3m2!1sen!2sin!4v1761324807730!5m2!1sen!2sin"
                 width="100%"
-                height="100%"
+                height="450px"
                 className="rounded border-0"
                 loading="lazy"
               ></iframe>
@@ -805,7 +811,7 @@ function App() {
             </div>
             <div className="col-12 col-md-6 col-lg-3 mb-3 mb-md-0 secondaryFont">
               <h4 className="h5 mb-3 font-semibolds textFont">QUICK LINKS</h4>
-              <div className="d-flex flex-column gap-2">
+              <div className="d-flex flex-column gap-2 footer-links">
                 <a href="#home">
                   <button className="btn btn-link text-white text-decoration-none p-0 text-start">
                     Home
@@ -843,7 +849,7 @@ function App() {
             </div>
             <div className="col-12 col-md-6 col-lg-3 mb-3 mb-md-0 secondaryFont">
               <h4 className="h5 mb-3 font-semibold textFont">SERVICES</h4>
-              <div className="d-flex flex-column gap-2 text-white">
+              <div className="d-flex flex-column gap-2 text-white footer-links">
                 <a href="#services">
                   <button className="btn btn-link text-white text-decoration-none p-0 text-start">
                     Yoga Classes
@@ -930,9 +936,8 @@ function App() {
 
       <section
         className="py-2 text-center"
-        style={{ backgroundColor: "#F3E8FF" }}
       >
-        <p className="mb-0 textFont">
+        <p className="mb-0 textFont text-dark">
           Made with <span className="text-danger">❤️</span> for women's wellness
         </p>
       </section>

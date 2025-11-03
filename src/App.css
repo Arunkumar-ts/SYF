@@ -146,11 +146,11 @@ html {
 }
 
 .offcanvas-header {
-    background: #F3E8FF;
+    background: #ffffff;
 }
 
 .header {
-    background: #F3E8FF;
+    background: #ffffff;
     position: sticky;
     top: 0px;
     z-index: 1000;
@@ -221,7 +221,7 @@ html {
 
 .footer {
     /* background: rgb(97, 96, 96); */
-    background:black;
+    background: black;
 }
 
 .footer-font {
@@ -234,9 +234,10 @@ html {
 }
 
 .formglass-card {
-    background-color: #F3E8FF;
+    background-color: #f5effc;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
     border-radius: 10px;
+    border-bottom: 4px solid #E75480;
 }
 
 
@@ -426,4 +427,11 @@ html {
     background-position: center;
     overflow: hidden;
     position: relative;
+}
+
+
+.footer-links a:hover {
+    transform: translateX(5px);
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
