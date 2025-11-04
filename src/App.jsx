@@ -210,7 +210,7 @@ function App() {
               >
                 A Safe <span style={{ color: "#E75480" }}>&</span> Supportive{" "}
                 <br />
-                Fitness Community for Women
+                Fitness Community for Women's,
               </h1>
               <h4 className="fw-bold text-dark secondaryFont">
                 Transform your body and mind through yoga
